@@ -7,6 +7,9 @@
 //
 
 import XCTest
+
+import RxSwift
+
 @testable import MapaTrenes
 
 class MapaTrenesTests: XCTestCase {
@@ -21,16 +24,22 @@ class MapaTrenesTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testAPI() {
+        let expectation = expectationWithDescription("api test")
+        
+        let observable = TrainMapAPI.trainLocationsForLine(5, updateInterval: 1.0)
+        let bag = DisposeBag()
+        NSLog("testing")
+        observable.subscribe(
+            onNext: {
+                (trains) -> Void in
+                NSLog("stuff: \(trains)")
+                XCTAssert(trains.count > 0)
+            }, onError: {
+                (error) -> Void in
+                XCTFail("\(error)")
+            }, onCompleted: nil, onDisposed: { expectation.fulfill() }
+            ).addDisposableTo(bag)
+        waitForExpectationsWithTimeout(30, handler: nil)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let disposeBag = DisposeBag()
+        
+        let o = TrainMapAPI.trainLocationsForLine(5, updateInterval: 1.0)
+        o.subscribeNext {
+            (items) -> Void in
+            NSLog("got: \(items)")
+        }.addDisposableTo(disposeBag)
+        
         return true
     }
 

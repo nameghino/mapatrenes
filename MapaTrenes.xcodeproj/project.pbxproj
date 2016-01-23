@@ -13,6 +13,10 @@
 		35D6E9001C530AD100BA4F93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35D6E8FF1C530AD100BA4F93 /* Assets.xcassets */; };
 		35D6E9031C530AD100BA4F93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35D6E9011C530AD100BA4F93 /* LaunchScreen.storyboard */; };
 		35D6E90E1C530AD100BA4F93 /* MapaTrenesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D6E90D1C530AD100BA4F93 /* MapaTrenesTests.swift */; };
+		35D6E91A1C53223500BA4F93 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D6E9191C53223500BA4F93 /* Model.swift */; };
+		35D6E91C1C53227900BA4F93 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D6E91B1C53227900BA4F93 /* Globals.swift */; };
+		35D6E91E1C53229500BA4F93 /* TrainMapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D6E91D1C53229500BA4F93 /* TrainMapAPI.swift */; };
+		445A9BEE87CE7E1C65684C5D /* Pods_MapaTrenes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0677B466AAF3511D2D1F746 /* Pods_MapaTrenes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,12 @@
 		35D6E9091C530AD100BA4F93 /* MapaTrenesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapaTrenesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35D6E90D1C530AD100BA4F93 /* MapaTrenesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaTrenesTests.swift; sourceTree = "<group>"; };
 		35D6E90F1C530AD100BA4F93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35D6E9191C53223500BA4F93 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		35D6E91B1C53227900BA4F93 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		35D6E91D1C53229500BA4F93 /* TrainMapAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainMapAPI.swift; sourceTree = "<group>"; };
+		4C307725F3D45B5C0F83D322 /* Pods-MapaTrenes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapaTrenes.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapaTrenes/Pods-MapaTrenes.release.xcconfig"; sourceTree = "<group>"; };
+		794CFB99A492084249DCAB91 /* Pods-MapaTrenes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapaTrenes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapaTrenes/Pods-MapaTrenes.debug.xcconfig"; sourceTree = "<group>"; };
+		B0677B466AAF3511D2D1F746 /* Pods_MapaTrenes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapaTrenes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				445A9BEE87CE7E1C65684C5D /* Pods_MapaTrenes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +73,8 @@
 				35D6E8F71C530AD100BA4F93 /* MapaTrenes */,
 				35D6E90C1C530AD100BA4F93 /* MapaTrenesTests */,
 				35D6E8F61C530AD100BA4F93 /* Products */,
+				6B3BD326F74A808C20562B0B /* Pods */,
+				9FE4919BCDFE7D7C83D091D3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +96,9 @@
 				35D6E8FF1C530AD100BA4F93 /* Assets.xcassets */,
 				35D6E9011C530AD100BA4F93 /* LaunchScreen.storyboard */,
 				35D6E9041C530AD100BA4F93 /* Info.plist */,
+				35D6E9191C53223500BA4F93 /* Model.swift */,
+				35D6E91B1C53227900BA4F93 /* Globals.swift */,
+				35D6E91D1C53229500BA4F93 /* TrainMapAPI.swift */,
 			);
 			path = MapaTrenes;
 			sourceTree = "<group>";
@@ -96,6 +112,23 @@
 			path = MapaTrenesTests;
 			sourceTree = "<group>";
 		};
+		6B3BD326F74A808C20562B0B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				794CFB99A492084249DCAB91 /* Pods-MapaTrenes.debug.xcconfig */,
+				4C307725F3D45B5C0F83D322 /* Pods-MapaTrenes.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9FE4919BCDFE7D7C83D091D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0677B466AAF3511D2D1F746 /* Pods_MapaTrenes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +136,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35D6E9121C530AD100BA4F93 /* Build configuration list for PBXNativeTarget "MapaTrenes" */;
 			buildPhases = (
+				5D1A847A3011E8C959E27307 /* Check Pods Manifest.lock */,
 				35D6E8F11C530AD100BA4F93 /* Sources */,
 				35D6E8F21C530AD100BA4F93 /* Frameworks */,
 				35D6E8F31C530AD100BA4F93 /* Resources */,
+				82DA891D2A4F8FF16381B240 /* Embed Pods Frameworks */,
+				76365C24DC2C3C481A8D5706 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,11 +228,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5D1A847A3011E8C959E27307 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		76365C24DC2C3C481A8D5706 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MapaTrenes/Pods-MapaTrenes-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82DA891D2A4F8FF16381B240 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MapaTrenes/Pods-MapaTrenes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		35D6E8F11C530AD100BA4F93 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35D6E91C1C53227900BA4F93 /* Globals.swift in Sources */,
+				35D6E91E1C53229500BA4F93 /* TrainMapAPI.swift in Sources */,
+				35D6E91A1C53223500BA4F93 /* Model.swift in Sources */,
 				35D6E8FB1C530AD100BA4F93 /* ViewController.swift in Sources */,
 				35D6E8F91C530AD100BA4F93 /* AppDelegate.swift in Sources */,
 			);
@@ -323,6 +410,7 @@
 		};
 		35D6E9131C530AD100BA4F93 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 794CFB99A492084249DCAB91 /* Pods-MapaTrenes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MapaTrenes/Info.plist;
@@ -334,6 +422,7 @@
 		};
 		35D6E9141C530AD100BA4F93 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C307725F3D45B5C0F83D322 /* Pods-MapaTrenes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MapaTrenes/Info.plist;
@@ -386,6 +475,7 @@
 				35D6E9141C530AD100BA4F93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35D6E9151C530AD100BA4F93 /* Build configuration list for PBXNativeTarget "MapaTrenesTests" */ = {
 			isa = XCConfigurationList;
@@ -394,6 +484,7 @@
 				35D6E9171C530AD100BA4F93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
