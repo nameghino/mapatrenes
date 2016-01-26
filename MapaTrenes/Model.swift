@@ -60,7 +60,6 @@ class TrainLocation: NSObject {
         self.line = line
         rawData = dictionary
         super.init()
-        NSLog("created: \(self)")
     }
 }
 

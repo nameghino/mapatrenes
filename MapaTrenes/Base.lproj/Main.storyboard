@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,15 +19,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WQI-0K-jEk">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="536"/>
                             </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaa-UY-VaQ">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cMX-ef-eqd"/>
+                                    <barButtonItem systemItem="refresh" id="wVp-28-Vlw">
+                                        <connections>
+                                            <action selector="updateTrains" destination="BYZ-38-t0r" id="KNp-fY-VOI"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="WQI-0K-jEk" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="BxI-EZ-ees"/>
-                            <constraint firstItem="WQI-0K-jEk" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Pnc-bG-tSs"/>
-                            <constraint firstItem="WQI-0K-jEk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VDd-Kh-n5M"/>
-                            <constraint firstItem="WQI-0K-jEk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fv2-mU-UfG"/>
+                            <constraint firstItem="WQI-0K-jEk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="1gh-SI-SuH"/>
+                            <constraint firstItem="Yaa-UY-VaQ" firstAttribute="top" secondItem="WQI-0K-jEk" secondAttribute="bottom" id="Xdz-Ea-zyc"/>
+                            <constraint firstItem="Yaa-UY-VaQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Yxs-tz-Z97"/>
+                            <constraint firstAttribute="trailing" secondItem="Yaa-UY-VaQ" secondAttribute="trailing" id="lxY-2i-7NX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WQI-0K-jEk" secondAttribute="trailing" constant="-20" id="meG-NK-Rmf"/>
+                            <constraint firstItem="WQI-0K-jEk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="xNX-mt-pXj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Yaa-UY-VaQ" secondAttribute="bottom" id="ymb-WJ-j5m"/>
                         </constraints>
                     </view>
                     <connections>
@@ -35,6 +50,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="444" y="213"/>
         </scene>
     </scenes>
 </document>

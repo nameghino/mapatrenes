@@ -30,7 +30,16 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        TrainMapAPI.trainLocationsForLine(5, updateInterval: 1.0).subscribeNext {
+        updateTrains()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func updateTrains() {
+        TrainMapAPI.instance.trainLocationsForLine(5, updateInterval: 1.0).observeOn(MainScheduler.instance).subscribeNext {
             [weak self] (trains) -> Void in
             self?.mapView.removeAnnotations(self!.mapView.annotations)
             self?.mapView.addAnnotations(trains)
@@ -39,12 +48,7 @@ class ViewController: UIViewController {
                 self?.mapView.showAnnotations(trains, animated: true)
                 self?.firstLoad = false
             }
-        }.addDisposableTo(disposeBag)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+            }.addDisposableTo(disposeBag)
     }
 }
 

@@ -26,6 +26,7 @@ class TrainMapAPI {
         }
     }
     
+    static let instance = TrainMapAPI()
     static let key = "v%23v%23QTUtWp%23MpWRy80Q0knTE10I30kj%23FNyZ"
     static let endpoint: NSURL = {
         let s = "http://trenes.mininterior.gov.ar/v2_pg/mapas/ajax_posiciones.php"
@@ -33,7 +34,7 @@ class TrainMapAPI {
         return url
     }()
     
-    private class var randomString: String {
+    private var randomString: String {
         func randomString(length: Int) -> String {
             let source = NSString(string: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz")
             return Array(0..<length).map {
@@ -46,13 +47,13 @@ class TrainMapAPI {
         return randomString(16)
     }
     
-    class func trainLocationsForLine(line: Int, updateInterval: NSTimeInterval) -> Observable<[TrainLocation]> {
+    func trainLocationsForLine(line: Int, updateInterval: NSTimeInterval) -> Observable<[TrainLocation]> {
         let targetURL: NSURL = {
             let components = NSURLComponents(URL: TrainMapAPI.endpoint, resolvingAgainstBaseURL: false)
             
             components?.queryItems = [
                 NSURLQueryItem(name: "ramal", value: "\(line)"),
-                NSURLQueryItem(name: "rnd", value: TrainMapAPI.randomString),
+                NSURLQueryItem(name: "rnd", value: randomString),
                 NSURLQueryItem(name: "key", value: TrainMapAPI.key),
                 
             ]
@@ -66,15 +67,14 @@ class TrainMapAPI {
             return r
         }()
         
+        
+        NSLog("target: \(request.URL!.absoluteString)")
+        
         return NSURLSession.sharedSession().rx_JSON(request).map {
             o in
             guard let dicts = o as? [JSONDictionary] else {
                 fatalError()
             }
-            
-            let lines = Set<Int>(dicts.flatMap { return $0["ramal"] as? Int })
-            
-            
             return dicts.flatMap { TrainLocation(dictionary: $0) }
         }        
     }

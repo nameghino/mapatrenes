@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let disposeBag = DisposeBag()
         
-        let o = TrainMapAPI.trainLocationsForLine(5, updateInterval: 1.0)
+        let o = TrainMapAPI.instance.trainLocationsForLine(5, updateInterval: 1.0)
         o.subscribeNext {
             (items) -> Void in
             NSLog("got: \(items)")
